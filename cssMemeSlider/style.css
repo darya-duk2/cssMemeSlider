@@ -1,0 +1,65 @@
+:root {
+    --font: 'Albert Sans', sans-serif;
+  }
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  .wrapper {
+    background-color: palevioletred;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  .slider-div {
+    overflow: hidden;
+  }
+
+  .one-slide-div {
+    display: flex;
+    position: relative;
+    left: 0;
+    justify-content: space-between;
+    margin-bottom: 35px;
+    gap: 25px;
+    transition: all ease 0.8s;
+  }
+
+  .pagination-div {
+    display: flex;
+    justify-content: center;
+  }
+
+  .pagination-div button {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: solid 5px #ffffff;
+  }
+
+  .pag-button {
+    background-color: #0c0c0e;
+  }
+
+  .pag-button:disabled {
+    background-color: #bb945f;
+    pointer-events: none;
+  }
+
+  @media (max-width: 1430px) {
+    .carousel-div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 58px;
+    }
+
+    .slider-div {
+        width: 450px;
+    }
+}
