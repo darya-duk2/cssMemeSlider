@@ -9,14 +9,19 @@
 }
 
 body {
-    background-color: palevioletred;
+    background-color: #B9F3E4;
+}
+
+.wrapper {
+    max-width: 80%;
+    margin: 0 auto;
+    padding-top: 2%;
 }
 
 .slider-div {
     overflow: hidden;
-    max-width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+    margin-bottom: 3%;
+    max-height: 75vh;
 }
 
 .one-slide-div {
@@ -27,14 +32,18 @@ body {
 .bottom-div {
     display: flex;
     justify-content: space-between;
+    gap: 1vw;
 }
 
 .text-p {
     font-family: var(--font);
+    font-size: 1.5em;
+    font-weight: 700;
     opacity: 0;
     transition: 0.7s;
     position: absolute;
     visibility: hidden;
+    color: #352F44;
 }
 
 .active {
@@ -48,18 +57,20 @@ body {
 .buttons-div {
     display: flex;
     justify-content: center;
+    gap: 1vw;
 }
 
 button {
     cursor: pointer;
-    width: 26px;
-    height: 26px;
+    width: 3vw;
+    height: 3vw;
     border-radius: 50%;
-    border: solid 5px #ffffff;
-    background-color: #0c0c0e;
+    /* border: solid 1vw #ffffff; */
+    border: none;
+    background-color: #ffffff;
 }
 
 button:disabled {
-    background-color: aqua;
+    background-color: #FFAACF;
     pointer-events: none;
 }
