@@ -1,29 +1,29 @@
 'use strict'
 
-const slider = document.querySelector('.one-slide-div');
+const slider = document.querySelector('.slider-div');
+const oneSlide = document.querySelector('.one-slide-div');
+const images = document.querySelectorAll('img');
 const buttons = document.querySelectorAll('.pag-button');
-const slideSize = 475;
 
-let offset = 0;
+let sliderSize;
+let index = 0;
 let buttonIndex = 0;
 
 function updateSlider() {
-    if (offset > - ((buttons.length -1) * slideSize)) {
-        offset -= slideSize;
-        slider.style.left = offset + 'px';
-        buttonIndex++;
-        index = buttonIndex;
-    };
+    sliderSize = slider.offsetWidth;
+    oneSlide.style.width = sliderSize * images.length + 'px';
+    images.forEach(mem => mem.style.width = sliderSize + 'px');
+    oneSlide.style.transform = `translateX(${-buttonIndex * sliderSize}px)`;
 };
 
-function returnSlider() {
-    if (offset < 0) {
-        offset += slideSize;
-        slider.style.left = offset + 'px';
-        buttonIndex--;
-        index = buttonIndex;
-    };
-};
+buttons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+        sliderSize = slider.offsetWidth;
+        buttonIndex = index;
+        oneSlide.style.transform = `translateX(${-index * sliderSize}px)`;
+        }
+    );
+});
 
 function disableButton(index) {
     for (let button of buttons) {
@@ -33,14 +33,8 @@ function disableButton(index) {
     buttons[index].setAttribute('disabled', '');
 };
 
-buttons.forEach((button, index) => {
-    button.addEventListener('click', () => {
-        offset = - slideSize * index;
-        slider.style.left = offset + 'px';
-        buttonIndex = index;
-        }
-    );
-});
+window.addEventListener('load', updateSlider);
+window.addEventListener('resize', updateSlider);
 
 for (let button of buttons) {
     button.addEventListener('click', disableButton);
