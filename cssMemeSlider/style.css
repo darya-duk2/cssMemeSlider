@@ -12,10 +12,6 @@ body {
     background-color: palevioletred;
 }
 
-button {
-    cursor: pointer;
-}
-
 .slider-div {
     overflow: hidden;
     max-width: 80%;
@@ -28,23 +24,42 @@ button {
     transition: all ease 1s;
 }
 
-.pagination-div {
+.bottom-div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.text-p {
+    font-family: var(--font);
+    opacity: 0;
+    transition: 0.7s;
+    position: absolute;
+    visibility: hidden;
+}
+
+.active {
+    transition: 0.7s;
+    transition-delay: 0.7s;
+    opacity: 1;
+    position: relative;
+    visibility: visible;
+}
+
+.buttons-div {
     display: flex;
     justify-content: center;
 }
 
-.pagination-div button {
+button {
+    cursor: pointer;
     width: 26px;
     height: 26px;
     border-radius: 50%;
     border: solid 5px #ffffff;
-}
-
-.pag-button {
     background-color: #0c0c0e;
 }
 
-.pag-button:disabled {
+button:disabled {
     background-color: aqua;
     pointer-events: none;
 }

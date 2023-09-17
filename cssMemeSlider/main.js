@@ -3,7 +3,7 @@
 const slider = document.querySelector('.slider-div');
 const oneSlide = document.querySelector('.one-slide-div');
 const images = document.querySelectorAll('img');
-const buttons = document.querySelectorAll('.pag-button');
+const buttons = document.querySelectorAll('button');
 
 let sliderSize;
 let index = 0;
@@ -33,9 +33,21 @@ function disableButton(index) {
     buttons[index].setAttribute('disabled', '');
 };
 
-window.addEventListener('load', updateSlider);
+document.addEventListener('DOMContentLoaded', updateSlider);
 window.addEventListener('resize', updateSlider);
 
 for (let button of buttons) {
     button.addEventListener('click', disableButton);
+};
+
+// make text visible for a mem
+const paragraphs = document.querySelectorAll('.text-p');
+
+for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', ( event ) => {
+        for (let x = 0; x < paragraphs.length; x++) {
+            paragraphs[x].classList.remove('active');
+        };
+        paragraphs[i].classList.add('active');
+    });
 };
