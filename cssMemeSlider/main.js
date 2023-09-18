@@ -1,5 +1,7 @@
 'use strict'
 
+alert('Прошу пока не проверять мою работу, т.к. я пропустила требование, что нельзя использовать скрипты. Буду исправлять. Напиши, пожалуйста, мне в дискорд. Спасибо!')
+
 const slider = document.querySelector('.slider-div');
 const oneSlide = document.querySelector('.one-slide-div');
 const images = document.querySelectorAll('img');
